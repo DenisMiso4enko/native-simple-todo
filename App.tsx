@@ -13,7 +13,7 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Title countTasks={countTasks} />
-        <InputBlock text={text} setText={setText} addTodo={addTodo} />\
+        <InputBlock text={text} setText={setText} addTodo={addTodo} />
         <FlatList
           data={todos}
           keyExtractor={(item) => item.id} // вместо key={}

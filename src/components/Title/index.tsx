@@ -3,7 +3,7 @@ import { Animated, StyleSheet, Text } from 'react-native';
 import View = Animated.View;
 
 interface TitleProps {
-  countTasks: number;
+  countTasks: string;
 }
 
 export const Title = ({ countTasks }: TitleProps) => {

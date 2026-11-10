@@ -35,6 +35,6 @@ export const useTodo = () => {
     removeTodo,
     addTodo,
     toggleTodo,
-    countTasks: todos.length
+    countTasks: todos.length.toString()
   };
 };
