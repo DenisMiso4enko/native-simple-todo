@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Todo } from '../types';
+import { getFilteredTodos } from '../utils/getFilteredTodos';
+import { FILTERS } from '../constants';
 
 export const useTodo = () => {
   const [text, setText] = useState('');
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [activeFilter, setActiveFilter] = useState<(typeof FILTERS)[number]>('all');
 
   const addTodo = () => {
     if (!text.trim()) return;
@@ -28,13 +31,17 @@ export const useTodo = () => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
+  const filteredTodos = getFilteredTodos(todos, activeFilter);
+
   return {
     text,
     setText,
-    todos,
+    todos: filteredTodos,
     removeTodo,
     addTodo,
     toggleTodo,
-    countTasks: todos.length.toString()
+    countTasks: todos.length.toString(),
+    activeFilter,
+    setActiveFilter
   };
 };

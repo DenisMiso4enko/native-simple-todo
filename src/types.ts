@@ -3,3 +3,5 @@ export interface Todo {
   title: string;
   done: boolean;
 }
+
+export type Filter = 'all' | 'active' | 'done';
