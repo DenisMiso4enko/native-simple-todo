@@ -9,7 +9,7 @@ interface TitleProps {
 export const Title = ({ countTasks }: TitleProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Мои задачи</Text>
+      <Text style={styles.title}>My Tasks</Text>
       <Text>{countTasks}</Text>
     </View>
   );
